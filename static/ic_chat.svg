@@ -1,0 +1,18 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.000000" height="40.000000" fill="none" customFrame="#000000">
+	<defs>
+		<filter id="pixso_custom_mask_type_outline">
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 " />
+		</filter>
+	</defs>
+	<mask id="mask_0" width="20.000000" height="20.000000" x="10.000000" y="11.000000" maskUnits="userSpaceOnUse">
+		<g filter="url(#pixso_custom_mask_type_outline)">
+			<path id="icon" d="M12 11L28 11C29.1 11 30 11.9 30 13L30 24C30 25.1 29.1 26 28 26L14 26L10 31L10.01 13C10.01 11.9 10.9 11 12 11ZM15 17L25 17C25.55 17 26 16.55 26 16C26 15.45 25.55 15 25 15L15 15C14.45 15 14 15.45 14 16C14 16.55 14.45 17 15 17ZM21 22L15 22C14.45 22 14 21.55 14 21C14 20.45 14.45 20 15 20L21 20C21.55 20 22 20.45 22 21C22 21.55 21.55 22 21 22Z" fill="rgb(255,255,255)" fill-rule="evenodd" />
+		</g>
+	</mask>
+	<g id="ic/chat">
+		<rect id="bound" width="40.000000" height="40.000000" x="0.000000" y="0.000000" />
+		<rect id="back" width="40.000000" height="40.000000" x="0.000000" y="0.000000" rx="20.000000" fill="rgb(255,62.3506,120.733)" />
+		<path id="icon" d="M12 11L28 11C29.1 11 30 11.9 30 13L30 24C30 25.1 29.1 26 28 26L14 26L10 31L10.01 13C10.01 11.9 10.9 11 12 11ZM15 17L25 17C25.55 17 26 16.55 26 16C26 15.45 25.55 15 25 15L15 15C14.45 15 14 15.45 14 16C14 16.55 14.45 17 15 17ZM21 22L15 22C14.45 22 14 21.55 14 21C14 20.45 14.45 20 15 20L21 20C21.55 20 22 20.45 22 21C22 21.55 21.55 22 21 22Z" fill="rgb(255,255,255)" fill-rule="evenodd" />
+		<g mask="url(#mask_0)" />
+	</g>
+</svg>
