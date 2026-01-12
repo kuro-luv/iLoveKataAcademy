@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function toggleAside() {
     if (!isAsideOpen) {
       aside.style.transform = 'translateX(0)';
-      aside.style.display = 'block';
+      aside.style.display = 'flex';
       isAsideOpen = true;
       body.classList.add('aside-open');
 
@@ -152,8 +152,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  document.addEventListener('click', function(event) {
+  //CLOSE ON CLOCK OR ESC
 
+  document.addEventListener('click', function(event) {
     if (isAsideOpen) {
       const clickedOnAside = aside && aside.contains(event.target);
       const clickedOnBurgerButton = burgerButton && burgerButton.contains(event.target);
@@ -161,6 +162,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (!clickedOnAside && !clickedOnBurgerButton && !clickedOnBurgerBackButton) {
         closeAside();
+      }
+    }
+
+    if (isFeedbackOpen) {
+      const clickedOnFeedback = feedback && feedback.contains(event.target);
+      const clickedOnFeedbackButtonAside = feedbackButtonAside && feedbackButtonAside.contains(event.target);
+      const clickedOnFeedbackButtonHeader = feedbackButtonHeader && feedbackButtonHeader.contains(event.target);
+      const clickedOnFeedbackBackButton = feedbackBackButton && feedbackBackButton.contains(event.target);
+
+      if (!clickedOnFeedback && !clickedOnFeedbackButtonAside &&
+        !clickedOnFeedbackButtonHeader && !clickedOnFeedbackBackButton) {
+        closeFeedback();
+      }
+    }
+
+    if (isCallOpen) {
+      const clickedOnCall = call && call.contains(event.target);
+      const clickedOnCallButtonAside = callButtonAside && callButtonAside.contains(event.target);
+      const clickedOnCallButtonHeader = callButtonHeader && callButtonHeader.contains(event.target);
+      const clickedOnCallBackButton = callBackButton && callBackButton.contains(event.target);
+
+      if (!clickedOnCall && !clickedOnCallButtonAside &&
+        !clickedOnCallButtonHeader && !clickedOnCallBackButton) {
+        closeCall();
+      }
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      if (isAsideOpen) {
+        closeAside();
+      }
+      if (isFeedbackOpen) {
+        closeFeedback();
+      }
+      if (isCallOpen) {
+        closeCall();
       }
     }
   });

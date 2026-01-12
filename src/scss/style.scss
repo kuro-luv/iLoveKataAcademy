@@ -19,6 +19,11 @@ $feedback-box-shadow-second: rgba(14, 24, 80, 0.2);
 
 body {
   font-family: 'TT Lakes', sans-serif;
+  &.aside-open,
+  &.feedback-open,
+  &.call-open {
+    overflow-y: hidden !important;
+  }
 }
 
 .header {
@@ -124,7 +129,7 @@ body {
     }
 
     &-group--center {
-      @media (max-width: 767.99px) {
+      @media (max-width: 767px) {
         display: none;
       }
       display: flex;
@@ -172,7 +177,7 @@ main {
   &__title-copy {
     display: flex;
     margin: 0;
-    padding-left: 42px;
+    padding-left: 24px;
     font-size: 28px;
     font-weight: 700;
     line-height: 40px;
@@ -180,6 +185,9 @@ main {
     background-repeat: no-repeat;
     background-position: center left;
     color: $black-text;
+    @media (min-width: 1440px) {
+      padding-left: 42px;
+    }
   }
 
   &__icon-group--repair,
@@ -242,6 +250,8 @@ main {
     }
     @media (min-width: 1366px) {
       display: none;
+    }
+    @media (min-width: 1440px) {
       padding: 42px 0 42px 35px;
     }
   }
@@ -260,14 +270,16 @@ main {
     }
     @media (min-width: 1366px) {
       margin-top: 8.37px;
-      padding-left: 34px;
+      padding-left: 24px;
       flex-wrap: wrap;
       color: $gray-text;
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
     }
-
+    @media (min-width: 1440px) {
+      padding-left: 34px;
+    }
 
     &::after {
       content: "";
@@ -326,18 +338,57 @@ main {
       display: flex;
       flex-direction: row;
       gap: 48px;
-      padding: 24px 64px 64px 24px;
+      padding: 24px 0 64px 0;
     }
     @media (min-width: 1366px) {
-      padding: 16.22px 68.65px 62px 34px;
+      padding: 24px 0 64px 0;
+      gap: 36px;
     }
 
     & .services__info {
       display: flex;
       overflow: hidden;
       flex-direction: column;
+      @media (min-width: 347px) {
+        max-height: 126px;
+      }
+      @media (min-width: 462px) {
+        max-height: 108px;
+      }
+      @media (min-width: 639px) {
+        max-height: 90px;
+      }
+      @media (max-width: 768px) {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      @media (min-width: 768px) {
+        min-width: 312px;
+        max-height: 207px;
+        line-height: 20px;
+        padding: 0;
+        margin-left: 24px;
+      }
+      @media (min-width: 1039px) {
+        max-height: 171px;
+      }
+      @media (min-width: 1039px) {
+        max-height: 171px;
+      }
+      @media (min-width: 1085px) {
+        max-height: 151px;
+      }
+      @media (min-width: 1366px) {
+        min-width: 490px;
+        max-height: 154px;
+        margin-left: 34px;
+      }
+      @media (min-width: 2560px) {
+        max-height: 134px;
+      }
 
       & .services__description {
+        display: inline;
         line-height: 18px;
         min-width: 288px;
         height: 90px;
@@ -347,12 +398,15 @@ main {
         font-weight: 400;
         letter-spacing: 0.2px;
         overflow: hidden;
-        @media (max-width: 768px) {
-          padding: 0 16px;
-        }
         @media (min-width: 768px) {
-          height: 120px;
+          min-width: 312px;
+          height: 160px;
           line-height: 20px;
+          padding-right: 0;
+        }
+        @media (min-width: 1366px) {
+          min-width: 490px;
+          height: 160px;
         }
       }
     }
@@ -363,7 +417,6 @@ main {
       padding: 0 0 0 16px;
       margin-top: 16px;
       margin-left: 8.29px;
-      margin-bottom: 16px;
       color: $black-text;
       font-size: 16px;
       font-weight: 500;
@@ -372,14 +425,20 @@ main {
       background-image: url(../img/ic_read-more.svg);
       background-repeat: no-repeat;
       background-position: center left;
+      margin-bottom: auto;
       @media (max-width: 768px) {
-        margin-left: 24.29px;
+        margin-left: 8.29px;
+        margin-bottom: 16px;
+      }
+      @media (max-width: 768px) {
+        //margin-left: 24.29px;
       }
       @media (min-width: 768px) {
         margin-top: 10px;
       }
       @media (min-width: 1366px) {
         margin-top: 13.78px;
+        //margin-left: 39.29px;
       }
     }
 
@@ -393,15 +452,28 @@ main {
         object-fit: cover;
         border-radius: 6px;
         background: $white-background-main;
+        min-width: 360px;
+        height: 208px;
+        margin-right: 24px;
+      }
+      @media (min-width: 1366px) {
+        min-width: 531.35px;
+        height: auto;
+        margin-right: 0;
       }
 
       & .services__image {
         width: 100%;
-        height: 100%;
-        @media (min-width: 768px) {
-          min-width: 360px;
-          height: 208px;
-        }
+        height: auto;
+      }
+      @media (min-width: 768px) {
+        width: 100%;
+        height: auto;
+      }
+      @media (min-width: 1366px) {
+        width: 100%;
+        height: auto;
+        padding-right: 32px;
       }
     }
   }
@@ -427,6 +499,12 @@ main {
     }
     @media (min-width: 768px) {
       padding: 16px 24px;
+    }
+    @media (min-width: 1366px) {
+      padding: 16px 24px 16px 24px;
+    }
+    @media (min-width: 1440px) {
+      padding: 16px 24px 16px 32px;
     }
   }
 
@@ -640,7 +718,7 @@ main {
       right: 0;
       width: 24px;
       height: 72px;
-      z-index: 11;
+      z-index: 10;
       background: linear-gradient(270.00deg, $white-background-main, $white-background-main-transparent 100%);
       @media (min-width: 768px) {
         display: none;
@@ -654,7 +732,7 @@ main {
       left: 0;
       width: 24px;
       height: 72px;
-      z-index: 11;
+      z-index: 10;
       background: linear-gradient(90.00deg, $white-background-main, $white-background-main-transparent 100%);
       @media (min-width: 768px) {
         display: none;
@@ -703,13 +781,16 @@ main {
         width: auto;
         grid-template-columns: repeat(4, 240px);
         justify-content: space-between;
-        padding: 24px 24px;
+      }
+      @media (min-width: 1440px) {
+        column-gap: 32px;
+        padding: 24px 32px;
       }
     }
   }
 
   &__button--show-all {
-    display: flex;
+    display: none;
     padding-left: 24px;
     height: 24px;
     margin-left: 34px;
@@ -724,8 +805,14 @@ main {
     background: url('../img/ic_read-more.svg');
     background-repeat: no-repeat;
     background-position: left center;
-    @media (max-width: 768px) {
-      display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+    @media (min-width: 1366px) {
+      margin-left: 33px;
+    }
+    @media (min-width: 1440px) {
+      margin-left: 41px;
     }
   }
 }
@@ -750,6 +837,12 @@ main {
     }
     @media (min-width: 768px) {
       padding: 16px 24px;
+    }
+    @media (min-width: 1366px) {
+      padding: 16px 24px 16px 24px;
+    }
+    @media (min-width: 1440px) {
+      padding: 16px 24px 16px 32px;
     }
   }
 
@@ -884,6 +977,10 @@ main {
     @media (min-width: 1366px) {
       grid-template-columns: repeat(4, 240px);
     }
+    @media (min-width: 1440px) {
+      column-gap: 32px;
+      padding: 24px 32px;
+    }
   }
 
   .swiper {
@@ -907,7 +1004,7 @@ main {
       right: 0;
       width: 24px;
       height: 166px;
-      z-index: 11;
+      z-index: 10;
       background: linear-gradient(270.00deg, $white-background-main, $white-background-main-transparent 100%);
       @media (min-width: 768px) {
         display: none;
@@ -921,7 +1018,7 @@ main {
       left: 0;
       width: 24px;
       height: 166px;
-      z-index: 11;
+      z-index: 10;
       background: linear-gradient(90.00deg, $white-background-main, $white-background-main-transparent 100%);
       @media (min-width: 768px) {
         display: none;
@@ -930,7 +1027,7 @@ main {
   }
 
   &__button--show-all {
-    display: flex;
+    display: none;
     padding-left: 24px;
     height: 24px;
     margin-left: 34px;
@@ -945,8 +1042,14 @@ main {
     background: url('../img/ic_read-more.svg');
     background-repeat: no-repeat;
     background-position: left center;
-    @media (max-width: 768px) {
-      display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+    @media (min-width: 1366px) {
+      margin-left: 33px;
+    }
+    @media (min-width: 1440px) {
+      margin-left: 41px;
     }
   }
 }
@@ -969,6 +1072,12 @@ main {
     @media (min-width: 768px) {
       margin: 0 24px;
     }
+    @media (min-width: 1366px) {
+      margin: 0 24px;
+    }
+    @media (min-width: 1440px) {
+      margin: 0 32px;
+    }
   }
 
   &__title {
@@ -988,10 +1097,16 @@ main {
     @media (min-width: 768px) {
       padding: 16px 24px 16px 24px;
     }
+    @media (min-width: 1366px) {
+      padding: 16px 24px 16px 24px;
+    }
+    @media (min-width: 1440px) {
+      padding: 16px 24px 16px 32px;
+    }
   }
 
   &__item {
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       width: 260px;
       height: 200px;
       padding: 0 16px 16px 16px;
@@ -1007,16 +1122,15 @@ main {
       justify-content: space-between;
       flex-wrap: nowrap;
       padding: 0 16px;
-    }
-
-    &:nth-last-child(n+2)::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 16px;
-      right: 16px;
-      height: 1px;
-      background: $gray-borders;
+      &:nth-last-child(n+2)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+        right: 16px;
+        height: 1px;
+        background: $gray-borders;
+      }
     }
   }
 
@@ -1039,7 +1153,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     padding: 31px 16px 16px 16px;
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       display: none;
     }
 
@@ -1109,6 +1223,7 @@ main {
   }
 
   &__order-button {
+
     transition: transform 0.3s;
 
     &:hover,
@@ -1122,7 +1237,7 @@ main {
       width: 119px;
       height: 32px;
       background-repeat: no-repeat;
-      top: 151px;
+      top: 148px;
       right: 16px;
       @media (min-width: 768px) {
         position: static;
@@ -1137,7 +1252,7 @@ main {
       width: 119px;
       height: 32px;
       background-repeat: no-repeat;
-      top: 152px;
+      top: 148px;
       right: 16px;
       @media (min-width: 768px) {
         position: static;
@@ -1152,7 +1267,7 @@ main {
       width: 119px;
       height: 32px;
       background-repeat: no-repeat;
-      top: 152px;
+      top: 148px;
       right: 16px;
       @media (min-width: 768px) {
         position: static;
@@ -1167,7 +1282,7 @@ main {
       width: 119px;
       height: 32px;
       background-repeat: no-repeat;
-      top: 152px;
+      top: 148px;
       right: 16px;
       @media (min-width: 768px) {
         position: static;
@@ -1182,7 +1297,7 @@ main {
       width: 119px;
       height: 32px;
       background-repeat: no-repeat;
-      top: 152px;
+      top: 148px;
       right: 16px;
       @media (min-width: 768px) {
         position: static;
@@ -1223,6 +1338,14 @@ main {
       padding: 24px 0 16px 24px;
       width: 445px;
     }
+    @media (min-width: 1366px) {
+      padding: 32px 0 16px 24px;
+      width: 445px;
+    }
+    @media (min-width: 1440px) {
+      padding: 32px 0 16px 32px;
+      width: 445px;
+    }
   }
 
   &__commercial-link {
@@ -1235,10 +1358,13 @@ main {
     letter-spacing: -0.2px;
     text-align: left;
     @media (min-width: 768px) {
-      margin: 0 16px 40.02px 24px;
+      margin: 0 16px 47px 24px;
     }
     @media (min-width: 1366px) {
       margin: 0 16px 50px 24px;
+    }
+    @media (min-width: 1440px) {
+      margin: 0 16px 50px 32px;
     }
 
     &::after {
@@ -1263,7 +1389,7 @@ main {
       right: 0;
       width: 24px;
       height: 200px;
-      z-index: 11;
+      z-index: 10;
       background: linear-gradient(270.00deg, $white-background-main, $white-background-main-transparent 100%);
       @media (min-width: 768px) {
         display: none;
@@ -1277,7 +1403,7 @@ main {
       left: 0;
       width: 24px;
       height: 200px;
-      z-index: 11;
+      z-index: 10;
       background: linear-gradient(90.00deg, $white-background-main, $white-background-main-transparent 100%);
       @media (min-width: 768px) {
         display: none;
@@ -1300,7 +1426,7 @@ main {
     }
     @media (min-width: 1366px) {
       margin-left: 306px;
-      padding: 32px 24px 21px 24px;
+      padding: 32px 33px 21px 31px;
     }
   }
 
@@ -1349,6 +1475,8 @@ main {
   overflow-y: auto;
   background-color: $white;
   box-shadow: 16px 0 52px 0 $aside-shadow;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 
   @media (min-width: 768px) {
     width: 320px;
@@ -1357,9 +1485,13 @@ main {
     width: 306px;
     display: flex !important;
     position: fixed;
-    transform: none !important;
-    height: 100vh;
+    transform: translateX(0) !important;
     box-shadow: none;
+    transition: none;
+  }
+
+  &.active {
+    transform: translateX(0);
   }
 
   &-open {
@@ -1509,7 +1641,6 @@ main {
   }
 
   &__icons {
-    //margin-top: 32px;
     display: flex;
     gap: 16.73px;
     padding-left: 16px;
@@ -1517,11 +1648,9 @@ main {
       padding-left: 24px;
     }
     @media (min-width: 768px) {
-      //margin-top: 268px;
       padding-left: 24px;
     }
     @media (min-width: 1366px) {
-      //margin-top: 350px;
       padding-left: 19px;
     }
 
@@ -1892,6 +2021,9 @@ main {
     border: 1px solid $gray-borders;
     border-radius: 8px;
     background: $white;
+    &:focus {
+      border: 1px solid $light-marine;
+    }
 
     &--tel {
       padding: 12px 206px 12px 16px;
